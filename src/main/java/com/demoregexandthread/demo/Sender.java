@@ -6,13 +6,13 @@ public class Sender {
 		
 		System.out.println("sending\t" + msg);
 		
-		try {
-			Thread.sleep(1000);
-		}
-		catch(Exception e) {
-			System.out.println("Thread  interrupted."); 
-		}
-		System.out.println("\n" + msg + "\tSent"); 
+//		try {
+//			Thread.sleep(1000);
+//		}
+//		catch(Exception e) {
+//			System.out.println("Thread  interrupted."); 
+//		}
+		System.out.println(msg + "\tSent" + "\n"); 
 		
 	}
 

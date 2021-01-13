@@ -52,6 +52,28 @@ public class DemoApplication {
                     " to " + (matcher2.end()-1)); 
 		}
 		
+		//// from DBS test
+		
+		public static int howMany(String sentence) {
+    	// Write your code here
+
+        	String[] words = sentence.split(" ");
+        
+        	int counter = 0;
+        
+        	Pattern pattern = Pattern.compile("[a-zA-Z\\-]+\\.?+\\??+\\!?+\\,?");
+        
+        	for(int i = 0 ; i < words.length ; i ++){
+            	Matcher matcher = pattern.matcher(words[i]);
+            	if(matcher.matches()){
+                	counter++;
+            	}
+        	}
+        
+        	return counter;
+    	}
+		 
+		
 		*/
 		
 		
@@ -67,9 +89,25 @@ public class DemoApplication {
 		myThreadClass2.setParam("azwar");
 		myThreadClass2.start();
 		
+		MyThreadClass myThreadClass3 = new MyThreadClass(sender);
+		myThreadClass3.setParam("iftikar");
+		myThreadClass3.start();
+		
+		
+//		MyThreadClass myThreadClass = new MyThreadClass();
+//		myThreadClass.setParam("naufal");
+//		myThreadClass.start();
+//		
+//		MyThreadClass myThreadClass2 = new MyThreadClass();
+//		myThreadClass2.setParam("azwar");
+//		myThreadClass2.start();
+//		
+//		MyThreadClass myThreadClass3 = new MyThreadClass();
+//		myThreadClass3.setParam("iftikar");
+//		myThreadClass3.start();
+		
 		System.out.println("outside the thread");
 		
 	}
 
-	
 }

@@ -10,6 +10,9 @@ public class MyThreadClass extends Thread{
 		this.sender = sender;
 	}
 	
+//	public MyThreadClass() {
+//	}
+	
 	public void setParam(String param) {
 		this.param = param;
 	}
@@ -20,10 +23,18 @@ public class MyThreadClass extends Thread{
 	
 	public void run() {
 		
+//		System.out.println("sending\t" + param);
+		
+		try {
+			Thread.sleep(1000);
+		}
+		catch(Exception e) {
+			System.out.println("Thread  interrupted."); 
+		}
+//		System.out.println(param + "\tSent" + "\n"); 
+		
 		synchronized(sender) {
-			
 			sender.send(param);
-			
 		}
 		
 	}
